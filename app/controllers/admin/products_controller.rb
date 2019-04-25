@@ -33,6 +33,12 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path,alert: "删除成功"
+  end
+
   def move_up
     @product = Product.find(params[:id])
     @product.move_higher
