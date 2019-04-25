@@ -18,5 +18,9 @@
     <%= f.input :price, label: '商品价格' %>
   </div>
 
+  <div class="group">
+    <%= f.input :image, as: :file %>
+  </div>
+
   <%= f.submit "新增商品", data: { disable_with: "Submitting..." } %>
 <% end %>
