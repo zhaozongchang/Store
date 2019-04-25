@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
   namespace :admin do
+     resources :orders
     resources :products do
       member do
         post :move_up
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
       post :pay_with_alipay
       post :pay_with_wechat
     end
-  end 
+  end
 
   namespace :account do
    resources :orders
